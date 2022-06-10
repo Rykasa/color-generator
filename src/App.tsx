@@ -1,3 +1,5 @@
+import { useState } from "react"
+import Values from "values.js"
 import { 
   ColorContainer, 
   Container, 
@@ -6,9 +8,12 @@ import {
 } from "./App.styles"
 
 export function App(){
+  const [colors, setColors] = useState(new Values('#f15025').all())
+  console.log(colors)
   return(
     <Container>
       <FormContainer>
+      <h3>Color<span>Full</span></h3>
         <Form>
           <input type="text" />
           <div className="btn-wrapper">
@@ -18,7 +23,12 @@ export function App(){
         </Form>
       </FormContainer>
       <ColorContainer>
-        <div className="color">a</div>
+        {colors.map((color)=>{
+          const {hex} = color
+          return(
+            <div className="color"></div>
+          )
+        })}
       </ColorContainer>
     </Container>
   )

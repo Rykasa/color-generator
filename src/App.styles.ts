@@ -8,8 +8,32 @@ export const Container = styled.section`
 export const FormContainer = styled.div`
   background-color: var(--dark-color);
   width: 100%;
+  height: 8.75rem;
   padding: 1rem 0;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+
+  @media screen and (max-width: 800px){
+    padding-bottom: 0;
+  }
+
+  h3{
+    color: var(--light-gray);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1.75rem;
+    letter-spacing: .1rem;
+    span{
+      color: var(--beige);
+    }
+
+    @media screen and (max-width: 800px){
+      font-size: 1.25rem;
+      left: .5rem;
+      top: .25rem;
+    }
+
+  }
 `;
 
 export const Form = styled.form`
@@ -70,10 +94,11 @@ export const Form = styled.form`
 
 export const ColorContainer = styled.div`
   display: grid;
+  min-height: calc(100vh - 8.75rem);
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
 
   .color{
-    background-color: red;
+    background-color: aqua;
   }
 `;
