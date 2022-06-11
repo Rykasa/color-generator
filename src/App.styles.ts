@@ -93,12 +93,9 @@ export const Form = styled.form`
 `;
 
 export const ColorContainer = styled.div`
-  display: grid;
   min-height: calc(100vh - 8.75rem);
+  max-height: 2900px;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
-
-  .color{
-    background-color: aqua;
-  }
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
 `;

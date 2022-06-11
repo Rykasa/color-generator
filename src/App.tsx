@@ -6,9 +6,10 @@ import {
   Form, 
   FormContainer 
 } from "./App.styles"
+import { SingleColor } from "./components/SingleColor"
 
 export function App(){
-  const [colors, setColors] = useState(new Values('#f15025').all())
+  const [colors, setColors] = useState(new Values('#f15025').all(10))
   console.log(colors)
   return(
     <Container>
@@ -23,10 +24,11 @@ export function App(){
         </Form>
       </FormContainer>
       <ColorContainer>
-        {colors.map((color)=>{
-          const {hex} = color
+        {colors.map((color, index)=>{
+          const {hex, weight, type} = color;
+          console.log(type)
           return(
-            <div className="color"></div>
+            <SingleColor hex={hex} key={index} weight={weight} type={type} />
           )
         })}
       </ColorContainer>
