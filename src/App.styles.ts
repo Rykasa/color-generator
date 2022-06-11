@@ -8,7 +8,7 @@ export const Container = styled.section`
 export const FormContainer = styled.div`
   background-color: var(--dark-color);
   width: 100%;
-  height: 8.75rem;
+  height: 9rem;
   padding: 1rem 0;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
 
@@ -33,27 +33,40 @@ export const FormContainer = styled.div`
       top: .25rem;
     }
 
+    @media screen and (max-width: 480px){
+      font-size: 1rem;
+    }
+
+
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<{error: boolean}>`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 90vw;
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
   gap: 8px;
+  position: relative;  
 
-  
   input{
     height: 2.5rem;
     border-radius: .5rem;
-    border: none;
+    border: 2px solid transparent;
+    outline: none;
     font-size: .875rem;
     padding: 0 .5rem;
-    color: var(--dark-gray);
+    color: var(--dark-gray); 
+    border: 2px solid ${({error}) => error ? 'crimson' : 'transparent'};
+
+    @media screen and (max-width: 450px){
+      height: 2rem;
+      font-size: 0.8rem;
+    }
+
   }
 
   .btn-wrapper{
@@ -76,6 +89,11 @@ export const Form = styled.form`
       &:hover{
         background-color: var(--light-gray);
       }
+
+      @media screen and (max-width: 450px){
+        font-size: 0.75rem;
+      }
+
     }
   }
 
@@ -93,7 +111,7 @@ export const Form = styled.form`
 `;
 
 export const ColorContainer = styled.div`
-  min-height: calc(100vh - 8.75rem);
+  min-height: calc(100vh - 9rem);
   max-height: 2900px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

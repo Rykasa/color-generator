@@ -10,15 +10,14 @@ export const Color = styled.div<{hex: string, type: string}>`
     text-align: right;
     margin-top: .5rem;
     margin-right: .5rem;
-    color: ${({type}) => type === 'shade' ? 'var(--light-gray)' : 'var(--dark-color)'};
+    color: ${({type}) => type === 'shade' ? 'var(--light-gray)' : 'var(--dark-gray)'};
     font-weight: 500;
   }
 
   .color-hex-value{
     text-align: left;
     margin-left: .5rem;
-    text-transform: uppercase;
-    color: ${({type}) => type === 'shade' ? 'var(--light-gray)' : 'var(--dark-color)'};
+    color: ${({type}) => type === 'shade' ? 'var(--light-gray)' : 'var(--dark-gray)'};
   }
 
   .copy-alert{
